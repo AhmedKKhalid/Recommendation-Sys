@@ -1,11 +1,8 @@
 import pandas as pd
 import numpy as np
-from datetime import date
 
 from haversine import haversine, Unit
 from streamlit_folium import folium_static
-import seaborn as sns
-from folium import plugins
 import folium
 import streamlit as st
 pd.options.mode.chained_assignment = None  # default='warn'
