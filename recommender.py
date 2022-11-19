@@ -14,7 +14,7 @@ def recommender_system():
    # try:
     if search:
         response_msg=None
-        current_dir=Path(_file_).parent if"__file__" in locals() else Path.cwd()
+        current_dir=Path(__file__).parent if"__file__" in locals() else Path.cwd()
         df_path=current_dir / "All Data.xlsx"
         dfX = pd.read_excel(df_path)
         df = dfX.copy()
