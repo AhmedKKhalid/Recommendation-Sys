@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
 from haversine import haversine, Unit
 from streamlit_folium import folium_static
@@ -13,7 +14,9 @@ def recommender_system():
    # try:
     if search:
         response_msg=None
-        dfX = pd.read_excel('All Data.xlsx')
+        current_dir=Path(_file_).parent if"__file__" in locals() else Path.cwd()
+        df_path=current_dir / "All Data.xlsx"
+        dfX = pd.read_excel(df_path)
         df = dfX.copy()
 
         df['R Lat'] = df['R Lat'].str[:-1].astype(float)
