@@ -35,15 +35,15 @@ password = st.sidebar.text_input('Please enter your password', type='password')
 
 login = st.sidebar.checkbox('Login')
 if login:
-    try:
-        user = auth.sign_in_with_email_and_password(email, password)
-        st.balloons()
-        recommender.recommender_system()
+#     try:
+    user = auth.sign_in_with_email_and_password(email, password)
+    st.balloons()
+    recommender.recommender_system()
 
-    except Exception as e:
-        print(e)
-        err_msg = '<p style="font-family:Courier; color:Red; font-size: 20px;">Please check email or password again !</p>'
-        st.markdown(err_msg, unsafe_allow_html=True)
+#     except Exception as e:
+#         print(e)
+#         err_msg = '<p style="font-family:Courier; color:Red; font-size: 20px;">Please check email or password again !</p>'
+#         st.markdown(err_msg, unsafe_allow_html=True)
     st.sidebar.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
 
